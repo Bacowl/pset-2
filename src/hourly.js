@@ -8,7 +8,16 @@ const THURS = readlineSync.question("Thursday: ");
 const FRI = readlineSync.question("Friday: ");
 const SAT = readlineSync.question("Saturday: ");
 const SUN = readlineSync.question("Sunday: ");
-let HOURS = (MON+TUES+WED+THURS+FRI+SAT+SUN)
-let MONEY = (WAGE*HOURS)
-let FINAL = MONEY.toLocaleString()
-console.log("You'll make $" + FINAL + " this week.")
+
+let MONWAGE = (MON*WAGE);
+let TUESWAGE = (TUES*WAGE);
+let WEDWAGE = (WED*WAGE);
+let THURSWAGE = (THURS*WAGE);
+let FRIWAGE = (FRI*WAGE);
+let SATWAGE = (SAT*WAGE);
+let SUNWAGE = (SUN*WAGE);
+
+let MONEY = (MONWAGE + TUESWAGE + WEDWAGE + THURSWAGE + FRIWAGE + SATWAGE + SUNWAGE)
+let ROUND = Math.round(MONEY*100)/100
+let COMMA = ROUND.toLocaleString("en", {style: "currency", currency: "USD"})
+console.log("\nYou'll make "+COMMA+" this week.")
