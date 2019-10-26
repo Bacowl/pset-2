@@ -8,7 +8,7 @@ console.log("\nEnter three quiz grades.")
 const Q1 = readlineSync.question("");
 const Q2 = readlineSync.question("");
 const Q3 = readlineSync.question("");
-console.log("\nEnter three Test grades.")
+console.log("\nEnter three test grades.")
 const T1 = readlineSync.question("");
 const T2 = readlineSync.question("");
 const T3 = readlineSync.question("");
@@ -23,5 +23,5 @@ let HWF = (HWG*HWW)
 let TF = (TG*TW)
 let QF = (QG*QW)
 let GF = (TF+QF+HWF)
-let GRADE = Math.round(GF*100)/100
+let GRADE = Intl.NumberFormat("en", { style: 'decimal', maximumFractionDigits:2, minimumFractionDigits:2 }).format(GF);
 console.log("\nYour marking period grade is "+GRADE+"%.")

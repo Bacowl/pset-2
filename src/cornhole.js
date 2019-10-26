@@ -5,7 +5,6 @@ const DIAMETER = 6
 let SURFACEwithouthole = LENGTH*WIDTH
 let HOLE = Math.PI*(DIAMETER/2)**2
 let SURFACE = SURFACEwithouthole-HOLE
-let ROUND = Math.round(SURFACE*100)/100
-let FINAL = ROUND.toLocaleString("en")
+let FINAL = Intl.NumberFormat('en', { style: 'decimal', maximumFractionDigits:2, minimumFractionDigits:2 }).format(SURFACE);
 
 console.log("\nThe surface area of a standard Cornhole board is "+FINAL+" square inch(es).")
