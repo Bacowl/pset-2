@@ -6,9 +6,9 @@ const BUS = readlineSync.question("Bus capacity: ");
 
 let PEOPLE = STUDENTS + TEACHERS;
 let LEFT = PEOPLE%BUS;
-let CHECK = Math.round(LEFT/(LEFT+1));
-let EXTRA = Math.abs(BUS*Math.abs(CHECK-1)+LEFT)
-let BUSNUM = ((PEOPLE-LEFT)/BUS) + CHECK;
+let CHECKFORFULLBUSES = Math.round(LEFT/(LEFT+1));
+let EXTRA = Math.abs(BUS*Math.abs(CHECKFORFULLBUSES-1)+LEFT)
+let BUSNUM = ((PEOPLE-LEFT)/BUS) + CHECKFORFULLBUSES;
 let EXTRAFINAL = EXTRA.toLocaleString("en")
 let BUSNUMFINAL = BUSNUM.toLocaleString("en")
 
